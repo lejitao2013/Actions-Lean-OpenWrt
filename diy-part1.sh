@@ -19,3 +19,6 @@
 # Lienol/openwrt-package
 # sed -i '$a src-git lienol https://github.com/Lancenas/lienol-openwrt-package.git' feeds.conf.default
 # sed -i '$a src-git xiaorouji https://github.com/xiaorouji/openwrt-passwall-packages.git' feeds.conf.default
+
+#增加luci-app-bandwidthd
+sed -i '$a src-git https://github.com/AlexZhuo/luci-app-bandwidthd.git' feeds.conf.default
