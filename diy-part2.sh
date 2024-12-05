@@ -9,7 +9,7 @@
 #============================================================
 
 # Modify default IP
-sed -i 's/192.168.1.1/192.168.50.1/g' openwrt/package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.50.1/g' package/base-files/luci2/bin/config_generate
 
 #添加编译日期标识
 sed -i "s/(\(luciversion || ''\))/(\1) + (' \/ $WRT_CI-$WRT_DATE')/g" $(find ./feeds/luci/modules/luci-mod-status/ -type f -name "10_system.js")
