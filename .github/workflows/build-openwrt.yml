@@ -120,12 +120,13 @@ jobs:
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
+           cd openwrt && ./scripts/feeds update istore
            cd openwrt && ./scripts/feeds update helloworld
 
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
            cd openwrt && ./scripts/feeds install -a -f -p helloworld
-
+           cd openwrt && ./scripts/feeds install -d y -p istore luci-app-store
 
     - name: Load custom configuration
       run: |
