@@ -75,6 +75,13 @@ jobs:
         large-packages: true
         swap-storage: true
 
+    - name: 查看磁盘空间
+      run: |
+        sudo timedatectl set-timezone "$TZ"
+        echo
+        echo " 系统空间      类型   总数  已用  可用 使用率"
+        df -hT $PWD
+      
     - name: Clone source code
       working-directory: /workdir
       run: |
