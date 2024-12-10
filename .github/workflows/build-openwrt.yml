@@ -53,6 +53,12 @@ jobs:
         large-packages: true
         swap-storage: true
 
+    - name: 二次查看磁盘空间
+      env:
+        DEBIAN_FRONTEND: noninteractive
+      run: |
+        df -hT $PWD
+
     - name: Initialization environment
       env:
         DEBIAN_FRONTEND: noninteractive
@@ -74,6 +80,12 @@ jobs:
         sudo timedatectl set-timezone "$TZ"
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
+
+    - name: 三次查看磁盘空间
+      env:
+        DEBIAN_FRONTEND: noninteractive
+      run: |
+        df -hT $PWD
 
     - name: Clone source code
       working-directory: /workdir
