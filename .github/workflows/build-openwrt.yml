@@ -32,6 +32,13 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@main
+      
+    - name: 查看磁盘空间
+      env:
+        DEBIAN_FRONTEND: noninteractive
+      run: |
+        df -hT $PWD
+      
     - name: 释放磁盘空间
       uses: jlumbroso/free-disk-space@main
       with:
@@ -50,6 +57,7 @@ jobs:
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
+        df -hT $PWD
         set +e
         docker rmi `docker images -q`
         echo "Deleting files, please wait ..."
