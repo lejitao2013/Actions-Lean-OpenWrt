@@ -1,4 +1,5 @@
 
+
 #=================================================
 # https://github.com/Lancenas/Actions-Lean-OpenWrt
 # Description: Build OpenWrt using GitHub Actions
@@ -111,6 +112,9 @@ jobs:
       working-directory: ./openwrt
       run: |
         git clone https://github.com/fw876/helloworld.git package/luci-app-ssr-plus
+        git clone https://github.com/AlexZhuo/luci-app-bandwidthd.git package/luci-app-bandwidthd
+        git clone https://github.com/sirpdboy/luci-app-eqosplus package/luci-app-eqosplus
+        
 
     - name: Load custom configuration
       run: |
