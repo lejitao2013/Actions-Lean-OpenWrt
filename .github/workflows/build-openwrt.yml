@@ -11,6 +11,16 @@
 name: OpenWrt Builder
 
 on:
+  release:
+    types: [published]
+
+  push:
+    branches: 
+      - master
+
+  schedule:
+    - cron: 0 0 * * 5
+    
   repository_dispatch:
   workflow_dispatch:
 
